@@ -1,0 +1,118 @@
+---
+---
+@charset "utf-8";
+
+/******
+ * Contents:
+ *
+ * 1) Variables
+ * 2) Imports
+ * 3) Site styles
+ *
+ ******/
+
+
+/*** Variables ***/
+
+// Override default Bootstrap variables.
+$brand-primary: #007f57;
+$line-height-base: 1.56;
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica,
+                         Arial, sans-serif !default;
+$font-size-base: 16px !default;
+$font-size-h1: ceil(($font-size-base * 3.5)) !default;
+$text-color: $brand-primary !default;
+$link-color: $brand-primary !default;
+$link-hover-color: $link-color !default;
+
+/*** Imports ***/
+
+@import "font-awesome/stylesheets/font-awesome.scss";
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,900");
+@import "bootstrap/bootstrap";
+
+
+/*** Site styles ***/
+
+body {
+  margin: 0 auto;
+  overflow-y: scroll;
+  padding: 20px;
+  text-align: center;
+}
+
+a:hover {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-weight: bold;
+  margin: 10px auto 33px;
+}
+
+#intro {
+  color: $gray;
+  font-size: ceil(($font-size-base * 1.25));
+  line-height: 1;
+  p {
+    margin: 0 0 1em;
+  }
+}
+
+#networks {
+  @extend .list-unstyled;
+  @extend .list-inline;
+  li {
+    margin: 0 1em;
+    a {
+      @extend .fa;
+      @extend .fa-2x;
+      border: 1px solid $brand-primary;
+      border-radius: 100%;
+      height: 2em;
+      line-height: 1.9em;
+      width: 2em;
+      &#gh {
+        @extend .fa-github;
+      }
+      &#li {
+        @extend .fa-linkedin;
+      }
+      &#tw {
+        @extend .fa-twitter;
+      }
+      &#em {
+        @extend .fa-envelope-o;
+      }
+      &:hover {
+        color: $link-color;
+        background-color: rgba(225, 225, 225, 0.175);
+        text-decoration: none;
+      }
+      span {
+        display: None;
+      }
+    }
+  }
+}
+
+footer {
+  bottom: 0;
+  height: 3em;
+  left: 0;
+  line-height: 1;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  a {
+    color: $gray-light;
+    &:hover {
+      color: $brand-primary;
+    }
+  }
+}

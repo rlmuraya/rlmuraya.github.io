@@ -1,0 +1,14 @@
+title: Rebecca Muraya
+email: rlmuraya@gmail.com
+url: "https://rlmuraya.github.io"
+
+exclude: ["README.rst"]
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: default
+      meta_description: |
+        Web developer based in Durham, North Carolina.

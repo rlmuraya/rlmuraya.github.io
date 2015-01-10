@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% if page.meta_description %}
+    <meta name="description" content="{{ page.meta_description }}">
+    {% endif %}
+    <link rel="canonical"
+          href="{{ page.url|replace:'index.html',''|prepend:site.baseurl|prepend:site.url }}">
+
+    <title>{% if page.title %}{{ page.title }}{% else %}{% if page.h1 %}{{ page.h1 }} | {% endif %}{{ site.title }}{% endif %}</title>
+
+    <link rel="stylesheet" type="text/css"
+          href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css"
+          href="/files/css/rlmuraya.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      {% if page.h1 %}<h1>{{ page.h1 }}</h1>{% endif %}
+
+      {{ content }}
+      <footer>
+        <p>
+          <a href="https://github.com/rlmuraya/rlmuraya.github.io"
+             target="_blank">view source code</a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
