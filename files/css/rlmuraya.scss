@@ -29,7 +29,14 @@ $link-hover-color: $link-color !default;
 
 @import "font-awesome/stylesheets/font-awesome.scss";
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:300,900");
-@import "bootstrap/bootstrap";
+
+@import "bootstrap/bootstrap/variables";
+@import "bootstrap/bootstrap/mixins";
+@import "bootstrap/bootstrap/normalize";
+@import "bootstrap/bootstrap/print";
+@import "bootstrap/bootstrap/scaffolding";
+@import "bootstrap/bootstrap/type";
+@import "bootstrap/bootstrap/grid";
 
 
 /*** Site styles ***/
