@@ -12,3 +12,5 @@ defaults:
       layout: default
       meta_description: |
         Web developer based in Durham, North Carolina.
+sass:
+    style: :compressed
