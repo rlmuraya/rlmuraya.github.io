@@ -56,6 +56,10 @@ h1 {
   margin: 10px auto 33px;
 }
 
+.no-wrap {
+  white-space: nowrap;
+}
+
 #intro {
   color: $gray;
   font-size: ceil(($font-size-base * 1.25));
