@@ -10,7 +10,7 @@
     <link rel="canonical"
           href="{{ page.url|replace:'index.html',''|prepend:site.baseurl|prepend:site.url }}">
 
-    <title>{% if page.title %}{{ page.title }}{% else %}{% if page.h1 %}{{ page.h1 }} | {% endif %}{{ site.title }}{% endif %}</title>
+    <title>{{ site.title }}{% if page.title %} | {{ page.title }}{% else if page.h1 %} | {{ page.h1 }}{% endif %}</title>
 
     <link rel="stylesheet" type="text/css"
           href="/files/css/rlmuraya.css" />
