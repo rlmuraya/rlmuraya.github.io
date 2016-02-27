@@ -10,16 +10,16 @@
     <link rel="canonical"
           href="{{ page.url|replace:'index.html',''|prepend:site.baseurl|prepend:site.url }}">
 
-    <title>{{ site.title }}{% if page.title %} | {{ page.title }}{% else if page.h1 %} | {{ page.h1 }}{% endif %}</title>
+    <title>{{ site.title }}{% if page.title %} | {{ page.title }}{% endif %}</title>
 
     <link rel="stylesheet" type="text/css"
           href="/files/css/rlmuraya.css" />
   </head>
   <body>
     <div class="container-fluid">
-      {% if page.h1 %}<h1>{{ page.h1 }}</h1>{% endif %}
-
-      {{ content }}
+      <div class="content">
+        {{ content }}
+      </div>
 
       <div class="footer">
         <div class="container">
