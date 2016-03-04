@@ -17,18 +17,21 @@
 // Override default Bootstrap variables.
 $brand-primary: #007f57;
 $line-height-base: 1.56;
-$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica,
+$font-family-sans-serif: "Cantarell", "Helvetica Neue", Helvetica,
                          Arial, sans-serif !default;
-$font-size-base: 16px !default;
-$font-size-h1: ceil(($font-size-base * 3.5)) !default;
+$font-size-base: 18px !default;
+$font-size-h1: ceil(($font-size-base * 2)) !default;
 $text-color: $brand-primary !default;
 $link-color: $brand-primary !default;
 $link-hover-color: $link-color !default;
 
+
 /*** Imports ***/
 
+@import url("http://fonts.googleapis.com/css?family=Cantarell");
+
 @import "font-awesome/stylesheets/font-awesome.scss";
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,900");
+@import "font-awesome/stylesheets/font-awesome/mixins.scss";
 
 @import "bootstrap/bootstrap/variables";
 @import "bootstrap/bootstrap/mixins";
@@ -37,6 +40,7 @@ $link-hover-color: $link-color !default;
 @import "bootstrap/bootstrap/scaffolding";
 @import "bootstrap/bootstrap/type";
 @import "bootstrap/bootstrap/grid";
+@import "bootstrap/bootstrap/utilities";
 
 
 /*** Site styles ***/
@@ -53,73 +57,71 @@ body {
   text-align: center;
 }
 
+.content {
+  margin: 30px auto;
+}
+
 a {
+  border-bottom: 1px solid $link_color;
+  padding-bottom: 1px;
   white-space: nowrap;
   &:hover, &:focus {
-    font-weight: bold;
+    font-weight: 600;
     text-decoration: none;
   }
 }
 
 h1 {
   font-weight: bold;
-  margin: 10px auto 33px;
-}
-
-
-#intro {
-  color: $gray;
-  font-size: ceil(($font-size-base * 1.25));
-  line-height: 1;
-  margin-bottom: 30px;
-  p {
-    line-height: 1.2;
-    margin: 0 0 1em;
-  }
+  margin: 30px auto 10px;
 }
 
 #networks {
   @extend .list-unstyled;
   @extend .list-inline;
-  margin: 0 0 30px 0;
+  margin: 30px 0 20px;
   li {
-    margin: 10px;
+    margin: 0 10px 10px;
     padding: 0;
-    a {
+
+    @mixin social-button($color) {
       @extend .fa;
       @extend .fa-2x;
-      border: 1px solid $brand-primary;
-      border-radius: 100%;
-      height: 2em;
-      line-height: 1.9em;
-      width: 2em;
-      &[title="GitHub"] {
-        @extend .fa-github;
-      }
-      &[title="LinkedIn"] {
-        @extend .fa-linkedin;
-      }
-      &[title="Twitter"] {
-        @extend .fa-twitter;
-      }
-      &[title="Email Me"] {
-        @extend .fa-envelope-o;
-      }
+      border: none;
+      color: $color;
+      transition: color 0.5s;
+      -webkit-transition: color 0.5s;
+
       &:hover {
-        color: $link-color;
-        background-color: rgba(225, 225, 225, 0.175);
+        color: lighten($color, 20%);
         text-decoration: none;
       }
       span {
-        display: None;
+        @extend .hidden;
       }
+    }
+    a[title="GitHub"] {
+      @extend .fa-github-square;
+      @include social-button(#444444);
+    }
+    a[title="LinkedIn"] {
+      @extend .fa-linkedin-square;
+      @include social-button(#007bb6);
+    }
+    a[title="Twitter"] {
+      @extend .fa-twitter-square;
+      @include social-button(#55acee);
+    }
+    a[title="Email Me"] {
+      @extend .fa-envelope-square;
+      @include social-button(#dd4b39);
     }
   }
 }
 
 .footer {
   bottom: 0;
-  background-color: #f5f5f5;
+  background-color: $gray-lighter;
   font-size: 16px;
   left: 0;
   line-height: 20px;
@@ -128,8 +130,10 @@ h1 {
   text-align: center;
   width: 100%;
   a {
+    border-color: $gray-light;
     color: $gray-light;
     &:hover {
+      border-color: $brand-primary;
       color: $brand-primary;
     }
   }
