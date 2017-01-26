@@ -11,6 +11,6 @@ defaults:
     values:
       layout: default
       meta_description: |
-        Python developer based in Raleigh/Durham, North Carolina.
+        Software engineer based in Raleigh/Durham, North Carolina.
 sass:
     style: :compressed
