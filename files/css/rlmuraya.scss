@@ -101,6 +101,10 @@ h1 {
         @extend .hidden;
       }
     }
+    a[title="Facebook"] {
+      @extend .fa-facebook-square;
+      @include social-button(#3b5998);
+    }
     a[title="GitHub"] {
       @extend .fa-github-square;
       @include social-button(#444444);
